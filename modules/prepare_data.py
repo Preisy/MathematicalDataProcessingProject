@@ -7,7 +7,11 @@ class PrepareData:
         self._PrepareData__describeData()
 
     def __readData(self):
-        file = open("YNDX_180311_200311.txt", "r")
+        # file = open("YNDX_180311_200311.txt", "r")
+        # file = open("time agregations/YNDX_211207_211208 1 hour.txt", "r")
+        # file = open("time agregations/YNDX_211207_211208 30 min.txt", "r")
+        # file = open("time agregations/YNDX_211207_211208 15 min.txt", "r")
+        file = open("time agregations/YNDX_211207_211208 5 min.txt", "r")
         file.readline()
         data = []
 

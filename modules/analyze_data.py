@@ -23,7 +23,8 @@ class AnalyzeData:
         self.history_salary.append(self.salary)
 
     def buy(self, money):
-        self.purchase_amount.append(money)
+        if self.purchase_amount == []:
+            self.purchase_amount.append(money)
 
         self.history_salary.append(self.salary)
 

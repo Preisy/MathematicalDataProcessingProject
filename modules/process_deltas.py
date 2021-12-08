@@ -62,10 +62,10 @@ class ProcessDeltas:
         else:
             deltas = self.deltas[i - analyze_data.region: i + 1]
 
-            # if self.par_all:
-            #     if all(i == 0 for i in deltas[analyze_data.region]):
-            #         analyze_data.append()
-            #         return [0, False]
+            if self.par_all:
+                if all(i == 0 for i in deltas[analyze_data.region]):
+                    analyze_data.append()
+                    return [0, False]
 
 
         counter_list = [0, 0]

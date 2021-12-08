@@ -47,11 +47,8 @@ if console.flag:
                 ind.append(j + 1)
 
         if all(i == 0 for i in n):
-            # print(*par_arr, 0)
-            for index in [0]:
-                file.write(str(index) + ' ')
-            file.write('\n')
-            # print(0)
+            # file.write(' '.join(map(str, par_arr)) + " " + "0\n")
+            file.write("0\n")
             continue
 
         # parametres
@@ -68,20 +65,13 @@ if console.flag:
         # если оставить analyze_data здесь, то нет перезаписи свойств analyze_data. те сохраняются history_salary и тд
         # analyze_data = AnalyzeData()
         deltas.analyseDeltas(common, analyze_data)
-        for index in [round(analyze_data.salary)]:
-            file.write(str(index) + ' ')
-        file.write('\n')
-        # print(*par_arr, round(analyze_data.salary))
-        # print(round(analyze_data.salary))
+
+        # file.write(' '.join(map(str, par_arr)) + " " + str(round(analyze_data.salary)) + "\n")
+        file.write(str(round(analyze_data.salary)) + "\n")
 
         analyze_data.overwrite()
 
-
-    # analyze_data.total()
-
-    # print_salary = PrintSalary(common, analyze_data)
-
-    # print(len(common.data))
+    print(len(common.data))
 
     os.makedirs("images", exist_ok=True)
     common.image.save(f"images/test.png", "PNG")
